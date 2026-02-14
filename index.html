@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just One Thing — Support</title>
+    <style>
+        :root {
+            --warm-bg: #FFF8F0;
+            --warm-text: #2C1810;
+            --warm-accent: #C4956A;
+            --warm-muted: #8B7355;
+            --warm-divider: #E8DDD0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: var(--warm-bg);
+            color: var(--warm-text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--warm-muted);
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            margin-top: 48px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--warm-text);
+        }
+
+        a {
+            color: var(--warm-accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 12px 28px;
+            background: var(--warm-accent);
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: opacity 0.2s;
+        }
+
+        .contact-link:hover {
+            opacity: 0.85;
+            text-decoration: none;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--warm-divider);
+            margin: 48px 0;
+        }
+
+        .privacy-section p,
+        .privacy-section li {
+            color: var(--warm-muted);
+            font-size: 15px;
+        }
+
+        .privacy-section ul {
+            margin: 12px 0 16px 20px;
+        }
+
+        .privacy-section li {
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            margin-top: 80px;
+            font-size: 14px;
+            color: var(--warm-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Just One Thing</h1>
+        <p class="subtitle">One thing per day. No more, no less.</p>
+
+        <h2>Support</h2>
+        <p>
+            Just One Thing is a daily focus app inspired by the philosophy of doing
+            one important thing each day. If you need help, have feedback, or want
+            to report an issue, we'd love to hear from you.
+        </p>
+        <a class="contact-link" href="mailto:support@johannystrom.se">Contact Support</a>
+
+        <hr class="divider">
+
+        <div class="privacy-section" id="privacy">
+            <h2>Privacy Policy</h2>
+            <p><strong>Last updated:</strong> February 2026</p>
+
+            <p>
+                Just One Thing is designed with your privacy in mind. Here's what you
+                need to know:
+            </p>
+
+            <h3 style="font-size: 17px; margin: 24px 0 8px; color: var(--warm-text);">Data We Collect</h3>
+            <p>
+                Just One Thing stores only the data you create — your daily tasks and
+                thoughts. This data lives on your device and, if you have iCloud
+                enabled, syncs privately via Apple's CloudKit.
+            </p>
+
+            <h3 style="font-size: 17px; margin: 24px 0 8px; color: var(--warm-text);">What We Don't Do</h3>
+            <ul>
+                <li>We do not collect analytics or usage data</li>
+                <li>We do not use third-party tracking or advertising SDKs</li>
+                <li>We do not sell, share, or transfer your data to third parties</li>
+                <li>We do not have access to your data — it stays on your device and in your private iCloud account</li>
+            </ul>
+
+            <h3 style="font-size: 17px; margin: 24px 0 8px; color: var(--warm-text);">iCloud Sync</h3>
+            <p>
+                If you use iCloud, your data syncs across your devices using Apple's
+                CloudKit infrastructure. This sync is managed entirely by Apple and
+                subject to <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.
+                You can disable iCloud sync at any time in your device settings.
+            </p>
+
+            <h3 style="font-size: 17px; margin: 24px 0 8px; color: var(--warm-text);">Contact</h3>
+            <p>
+                If you have questions about this privacy policy, contact us at
+                <a href="mailto:support@johannystrom.se">support@johannystrom.se</a>.
+            </p>
+        </div>
+
+        <p class="footer">&copy; 2026 Johan Nystr&ouml;m</p>
+    </div>
+</body>
+</html>
