@@ -5,167 +5,232 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just One Thing — Support</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
         :root {
-            --warm-bg: #FFF8F0;
+            --warm-bg: #FBF4EB;
             --warm-text: #2C1810;
             --warm-accent: #C4956A;
+            --warm-gold: #D4A574;
             --warm-muted: #8B7355;
             --warm-divider: #E8DDD0;
+            --warm-card: rgba(255,255,255,0.5);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            font-family: 'Inter', -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
             background: var(--warm-bg);
             color: var(--warm-text);
             line-height: 1.6;
             min-height: 100vh;
+            background-image:
+                radial-gradient(ellipse at 20% 0%, rgba(212, 165, 116, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 100%, rgba(196, 149, 106, 0.1) 0%, transparent 60%);
         }
 
-        .container {
-            max-width: 640px;
-            margin: 0 auto;
-            padding: 80px 24px;
+        .hero {
+            padding: 120px 24px 80px;
+            text-align: center;
         }
 
         h1 {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -1.5px;
-            margin-bottom: 8px;
+            font-size: clamp(56px, 12vw, 96px);
+            font-weight: 900;
+            letter-spacing: -3px;
+            line-height: 0.95;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--warm-text) 0%, var(--warm-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .subtitle {
-            font-size: 18px;
+            font-size: clamp(18px, 3vw, 24px);
             color: var(--warm-muted);
-            margin-bottom: 60px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        h2 {
-            font-size: 24px;
-            font-weight: 600;
+        .content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 24px 100px;
+        }
+
+        .card {
+            background: var(--warm-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(196, 149, 106, 0.15);
+            border-radius: 24px;
+            padding: 48px 40px;
+            margin-bottom: 32px;
+        }
+
+        .card h2 {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: -1px;
             margin-bottom: 16px;
-            margin-top: 48px;
         }
 
-        h2:first-of-type {
-            margin-top: 0;
-        }
-
-        p {
+        .card p {
+            color: var(--warm-muted);
+            font-size: 16px;
+            line-height: 1.7;
             margin-bottom: 16px;
-            color: var(--warm-text);
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--warm-accent), var(--warm-gold));
+            color: white;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 24px rgba(196, 149, 106, 0.3);
+        }
+
+        .contact-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(196, 149, 106, 0.4);
+            text-decoration: none;
         }
 
         a {
             color: var(--warm-accent);
             text-decoration: none;
+            font-weight: 500;
         }
 
         a:hover {
             text-decoration: underline;
         }
 
-        .contact-link {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 12px 28px;
-            background: var(--warm-accent);
-            color: white;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: opacity 0.2s;
+        .privacy-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 32px 0 8px;
+            color: var(--warm-text);
         }
 
-        .contact-link:hover {
-            opacity: 0.85;
-            text-decoration: none;
+        .privacy-card h3:first-of-type {
+            margin-top: 24px;
         }
 
-        .divider {
-            border: none;
-            border-top: 1px solid var(--warm-divider);
-            margin: 48px 0;
+        .privacy-card ul {
+            margin: 12px 0 16px 0;
+            list-style: none;
         }
 
-        .privacy-section p,
-        .privacy-section li {
+        .privacy-card li {
             color: var(--warm-muted);
             font-size: 15px;
+            line-height: 1.7;
+            padding: 6px 0 6px 24px;
+            position: relative;
         }
 
-        .privacy-section ul {
-            margin: 12px 0 16px 20px;
+        .privacy-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--warm-accent);
+            opacity: 0.5;
         }
 
-        .privacy-section li {
-            margin-bottom: 8px;
+        .updated {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--warm-accent);
+            margin-bottom: 16px;
         }
 
         .footer {
-            margin-top: 80px;
+            text-align: center;
+            padding: 40px 24px;
             font-size: 14px;
             color: var(--warm-muted);
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Just One Thing</h1>
-        <p class="subtitle">One thing per day. No more, no less.</p>
+    <div class="hero">
+        <h1>Just One<br>Thing</h1>
+        <p class="subtitle">One thing per day. No more.</p>
+    </div>
 
-        <h2>Support</h2>
-        <p>
-            Just One Thing is a daily focus app inspired by the philosophy of doing
-            one important thing each day. If you need help, have feedback, or want
-            to report an issue, we'd love to hear from you.
-        </p>
-        <a class="contact-link" href="mailto:support@johannystrom.se">Contact Support</a>
+    <div class="content">
+        <div class="card">
+            <h2>Support</h2>
+            <p>
+                A daily focus app built on a simple idea — do one important thing
+                today. Need help, have feedback, or found a bug? We'd love to hear
+                from you.
+            </p>
+            <a class="contact-link" href="mailto:support@johannystrom.se">Get in Touch</a>
+        </div>
 
-        <hr class="divider">
-
-        <div class="privacy-section" id="privacy">
-            <h2>Privacy Policy</h2>
-            <p><strong>Last updated:</strong> February 2026</p>
+        <div class="card privacy-card" id="privacy">
+            <h2>Privacy</h2>
+            <span class="updated">Last updated February 2026</span>
 
             <p>
-                Just One Thing is designed with your privacy in mind. Here's what you
-                need to know:
+                Just One Thing is built with your privacy as a foundation, not an
+                afterthought.
             </p>
 
-            <h3 style="font-size: 17px; margin: 24px 0 8px; color: var(--warm-text);">Data We Collect</h3>
+            <h3>Your Data</h3>
             <p>
-                Just One Thing stores only the data you create — your daily tasks and
-                thoughts. This data lives on your device and, if you have iCloud
-                enabled, syncs privately via Apple's CloudKit.
+                Everything you create — your daily tasks and thoughts — lives on
+                your device. If you have iCloud enabled, it syncs privately via
+                Apple's CloudKit. We never see it.
             </p>
 
-            <h3 style="font-size: 17px; margin: 24px 0 8px; color: var(--warm-text);">What We Don't Do</h3>
+            <h3>What We Don't Do</h3>
             <ul>
-                <li>We do not collect analytics or usage data</li>
-                <li>We do not use third-party tracking or advertising SDKs</li>
-                <li>We do not sell, share, or transfer your data to third parties</li>
-                <li>We do not have access to your data — it stays on your device and in your private iCloud account</li>
+                <li>Collect analytics or usage data</li>
+                <li>Use third-party tracking or advertising</li>
+                <li>Sell, share, or transfer your data</li>
+                <li>Access your content — ever</li>
             </ul>
 
-            <h3 style="font-size: 17px; margin: 24px 0 8px; color: var(--warm-text);">iCloud Sync</h3>
+            <h3>iCloud Sync</h3>
             <p>
-                If you use iCloud, your data syncs across your devices using Apple's
-                CloudKit infrastructure. This sync is managed entirely by Apple and
-                subject to <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.
-                You can disable iCloud sync at any time in your device settings.
+                iCloud sync is managed entirely by Apple under
+                <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.
+                You can disable it any time in device settings.
             </p>
 
-            <h3 style="font-size: 17px; margin: 24px 0 8px; color: var(--warm-text);">Contact</h3>
+            <h3>Contact</h3>
             <p>
-                If you have questions about this privacy policy, contact us at
+                Questions about privacy? Reach us at
                 <a href="mailto:support@johannystrom.se">support@johannystrom.se</a>.
             </p>
         </div>
-
-        <p class="footer">&copy; 2026 Johan Nystr&ouml;m</p>
     </div>
+
+    <p class="footer">&copy; 2026 Johan Nystr&ouml;m</p>
 </body>
 </html>
