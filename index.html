@@ -178,54 +178,54 @@
 </head>
 <body>
     <div class="hero">
-        <h1>Enda</h1>
-        <p class="subtitle">One thing per day. No more.</p>
+        <h1 data-sv="Bara en grej">Enda</h1>
+        <p class="subtitle" data-sv="En sak om dagen. Inte mer.">One thing per day. No more.</p>
     </div>
 
     <div class="content">
         <div class="card">
-            <h2>Support</h2>
-            <p>
+            <h2 data-sv="Support">Support</h2>
+            <p data-sv="En app f&ouml;r dagligt fokus byggd p&aring; en enkel id&eacute; &mdash; g&ouml;r en viktig sak idag. Beh&ouml;ver du hj&auml;lp, har feedback eller hittat en bugg? Vi h&ouml;r g&auml;rna fr&aring;n dig.">
                 A daily focus app built on a simple idea — do one important thing
                 today. Need help, have feedback, or found a bug? We'd love to hear
                 from you.
             </p>
-            <a class="contact-link" href="mailto:support@nystrom.consulting">Get in Touch</a>
+            <a class="contact-link" href="mailto:support@nystrom.consulting" data-sv="H&ouml;r av dig">Get in Touch</a>
         </div>
 
         <div class="card privacy-card" id="privacy">
-            <h2>Privacy</h2>
-            <span class="updated">Last updated February 2026</span>
+            <h2 data-sv="Integritet">Privacy</h2>
+            <span class="updated" data-sv="Senast uppdaterad februari 2026">Last updated February 2026</span>
 
-            <p>
+            <p data-sv="Bara en grej &auml;r byggd med din integritet som grund, inte som en eftertanke.">
                 Enda is built with your privacy as a foundation, not an
                 afterthought.
             </p>
 
-            <h3>Your Data</h3>
-            <p>
+            <h3 data-sv="Din data">Your Data</h3>
+            <p data-sv="Allt du skapar &mdash; dina dagliga uppgifter och tankar &mdash; finns p&aring; din enhet. Om du har iCloud aktiverat synkas det privat via Apples CloudKit. Vi ser det aldrig.">
                 Everything you create — your daily tasks and thoughts — lives on
                 your device. If you have iCloud enabled, it syncs privately via
                 Apple's CloudKit. We never see it.
             </p>
 
-            <h3>What We Don't Do</h3>
+            <h3 data-sv="Vad vi inte g&ouml;r">What We Don't Do</h3>
             <ul>
-                <li>Collect analytics or usage data</li>
-                <li>Use third-party tracking or advertising</li>
-                <li>Sell, share, or transfer your data</li>
-                <li>Access your content — ever</li>
+                <li data-sv="Samlar in analys- eller anv&auml;ndningsdata">Collect analytics or usage data</li>
+                <li data-sv="Anv&auml;nder sp&aring;rning eller reklam fr&aring;n tredje part">Use third-party tracking or advertising</li>
+                <li data-sv="S&auml;ljer, delar eller &ouml;verf&ouml;r din data">Sell, share, or transfer your data</li>
+                <li data-sv="Tittar p&aring; ditt inneh&aring;ll &mdash; aldrig">Access your content — ever</li>
             </ul>
 
-            <h3>iCloud Sync</h3>
-            <p>
+            <h3 data-sv="iCloud-synk">iCloud Sync</h3>
+            <p data-sv="iCloud-synk hanteras helt av Apple under <a href='https://www.apple.com/legal/privacy/' target='_blank'>Apples integritetspolicy</a>. Du kan st&auml;nga av det n&auml;r som helst i enhetsinst&auml;llningarna.">
                 iCloud sync is managed entirely by Apple under
                 <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.
                 You can disable it any time in device settings.
             </p>
 
-            <h3>Contact</h3>
-            <p>
+            <h3 data-sv="Kontakt">Contact</h3>
+            <p data-sv="Fr&aring;gor om integritet? N&aring; oss p&aring; <a href='mailto:support@nystrom.consulting'>support@nystrom.consulting</a>.">
                 Questions about privacy? Reach us at
                 <a href="mailto:support@nystrom.consulting">support@nystrom.consulting</a>.
             </p>
@@ -233,5 +233,15 @@
     </div>
 
     <p class="footer">&copy; 2026 Johan Nystr&ouml;m</p>
+
+    <script>
+        if (navigator.language.startsWith('sv')) {
+            document.documentElement.lang = 'sv';
+            document.title = 'Bara en grej — Support';
+            document.querySelectorAll('[data-sv]').forEach(function(el) {
+                el.innerHTML = el.getAttribute('data-sv');
+            });
+        }
+    </script>
 </body>
 </html>
